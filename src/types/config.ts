@@ -28,6 +28,8 @@ export interface WebhookConfig {
 
 /** Top-level maitre-d configuration */
 export interface MaitredConfig {
+  /** Whether the user has completed initial setup */
+  _initialized: boolean;
   /** Platform-specific settings keyed by platform ID */
   platforms: Record<string, { /** Whether this platform is enabled */ enabled: boolean }>;
   /** AI/LLM provider settings */
@@ -87,5 +89,10 @@ export interface MaitredConfig {
     level: 'trace' | 'debug' | 'info' | 'warn' | 'error' | 'fatal';
     /** Optional log file path */
     file?: string;
+  };
+  /** Free-text user dining preferences for AI context */
+  userPreferences: {
+    /** Natural language description of dining preferences */
+    description?: string;
   };
 }

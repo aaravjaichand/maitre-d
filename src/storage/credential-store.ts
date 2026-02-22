@@ -85,6 +85,26 @@ export class CredentialStore {
     return Object.keys(data);
   }
 
+  private static readonly SENTINEL_KEY = '_passphrase_check';
+  private static readonly SENTINEL_VALUE = 'maitre-d';
+
+  /** Store a sentinel value to enable passphrase verification on future runs. */
+  storeSentinel(passphrase: string): void {
+    this.store(CredentialStore.SENTINEL_KEY, CredentialStore.SENTINEL_VALUE, passphrase);
+  }
+
+  /** Verify a passphrase by decrypting the sentinel value. Returns false if no sentinel exists or decryption fails. */
+  verifyPassphrase(passphrase: string): boolean {
+    if (!this.has(CredentialStore.SENTINEL_KEY)) {
+      return true; // No sentinel yet — nothing to verify against
+    }
+    try {
+      return this.retrieve(CredentialStore.SENTINEL_KEY, passphrase) === CredentialStore.SENTINEL_VALUE;
+    } catch {
+      return false;
+    }
+  }
+
   private readFile(): CredentialData {
     if (!existsSync(this.filePath)) {
       return {};

@@ -79,4 +79,14 @@ describe('CredentialStore', () => {
     store.store('key', 'updated', passphrase);
     expect(store.retrieve('key', passphrase)).toBe('updated');
   });
+
+  it('should store and verify sentinel', () => {
+    store.storeSentinel(passphrase);
+    expect(store.verifyPassphrase(passphrase)).toBe(true);
+    expect(store.verifyPassphrase('wrong-passphrase')).toBe(false);
+  });
+
+  it('should return true when no sentinel exists', () => {
+    expect(store.verifyPassphrase(passphrase)).toBe(true);
+  });
 });

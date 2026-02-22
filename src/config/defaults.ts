@@ -1,6 +1,7 @@
 import type { MaitredConfig } from '../types/index.js';
 
 export const DEFAULT_CONFIG: MaitredConfig = {
+  _initialized: false,
   platforms: {},
   ai: {
     temperature: 0.3,
@@ -35,4 +36,5 @@ export const DEFAULT_CONFIG: MaitredConfig = {
   logging: {
     level: 'info',
   },
+  userPreferences: {},
 };

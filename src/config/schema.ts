@@ -58,7 +58,12 @@ const LoggingConfigSchema = z.object({
   file: z.string().optional(),
 });
 
+const UserPreferencesSchema = z.object({
+  description: z.string().optional(),
+});
+
 export const MaitredConfigSchema = z.object({
+  _initialized: z.boolean().default(false),
   platforms: z.record(z.string(), PlatformConfigSchema).default(() => ({})),
   ai: AIConfigSchema.default(() => ({ temperature: 0.3, enabled: false })),
   calendar: CalendarConfigSchema.default(() => ({
@@ -82,6 +87,7 @@ export const MaitredConfigSchema = z.object({
     retryAttempts: 3,
   })),
   logging: LoggingConfigSchema.default(() => ({ level: 'info' as const })),
+  userPreferences: UserPreferencesSchema.default(() => ({})),
 });
 
 export type ValidatedConfig = z.infer<typeof MaitredConfigSchema>;

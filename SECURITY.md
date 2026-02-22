@@ -6,7 +6,7 @@ If you discover a security vulnerability in maitre-d, please report it responsib
 
 **Do not open a public GitHub issue for security vulnerabilities.**
 
-Instead, please email: **security@maitre-d.dev** (or open a private security advisory via GitHub's "Report a vulnerability" feature on the Security tab).
+Instead, please email: **aaravai413@gmail.com** (or open a private security advisory via GitHub's "Report a vulnerability" feature on the Security tab).
 
 Include:
 - A description of the vulnerability

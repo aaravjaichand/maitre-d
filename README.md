@@ -21,7 +21,7 @@ It figures out the rest — searching across platforms, ranking results by how w
 - **Reservation Drop Sniping** — Books the instant reservations go live with millisecond precision
 - **Cancellation Monitoring** — Continuously watches for cancelled slots and grabs them automatically
 - **AI-Powered Search** — Describe what you want in natural language instead of configuring manually
-- **Multi-Platform** — Works across Resy, OpenTable, and Tock from a single tool
+- **Multi-Platform** — Works across Resy and OpenTable from a single tool
 - **Preference Learning** — Learns your taste over time and makes smarter recommendations
 - **Smart Scheduling** — Tracks restaurant drop schedules and manages snipes automatically
 - **Calendar Integration** — Checks your availability and creates booking events automatically
@@ -33,7 +33,6 @@ It figures out the rest — searching across platforms, ranking results by how w
 |----------|--------|---------|------|
 | Resy     | Planned | Planned | Planned |
 | OpenTable| Planned | Planned | Planned |
-| Tock     | Planned | Planned | Planned |
 
 ## Installation
 
@@ -108,4 +107,4 @@ Areas where help is especially appreciated:
 
 ---
 
-*maitre-d is not affiliated with Resy, OpenTable, Tock, American Express, or any restaurant or reservation platform.*
+*maitre-d is not affiliated with Resy, OpenTable, American Express, or any restaurant or reservation platform.*
